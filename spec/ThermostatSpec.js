@@ -19,9 +19,37 @@ describe("Thermostat", function(){
         describe("Up will increase the temperature", function(){
             it("Temperature will be 30 degrees", function(){
             let thermostat = new Thermostat
-            thermostat.down(10)
-            expect(thermostat.temperature).toBe(10);
+            thermostat.down(5)
+            expect(thermostat.temperature).toBe(15);
             });    
         });
+    });
+
+    describe("Minimum temperature", function(){
+        describe("Temperature will not go below minimum", function(){
+            it("Temperature will not go below 10", function(){
+                let thermostat = new Thermostat
+                //for(let i = 0; i < 10; i++){
+                  //  thermostat.down(1);
+                //};
+                thermostat.down(10);
+                expect(thermostat.temperature).toBe(10)
+            });
+        });
+    });
+    describe("Power Saving Mode", function(){
+        describe("On", function(){
+            it("Check power saving mode is on", function(){
+                let thermostat = new Thermostat
+                expect(thermostat.powerSavingMode).toBe(true)
+            });
+        }); 
+        describe("On", function(){
+            it("Check power saving mode is on", function(){
+                let thermostat = new Thermostat
+                thermostat.powerSavingModeOff();
+                expect(thermostat.powerSavingMode).toBe(false)
+            });
+        });    
     });
 });
