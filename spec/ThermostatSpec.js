@@ -14,7 +14,14 @@ describe("Thermostat", function(){
             let thermostat = new Thermostat
             thermostat.up(10)
             expect(thermostat.temperature).toBe(30);
-            });
+            });   
+        });
+        describe("Up will increase the temperature", function(){
+            it("Temperature will be 30 degrees", function(){
+            let thermostat = new Thermostat
+            thermostat.down(10)
+            expect(thermostat.temperature).toBe(10);
+            });    
         });
     });
 });
