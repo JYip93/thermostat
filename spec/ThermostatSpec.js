@@ -86,4 +86,30 @@ describe("Thermostat", function(){
             });
         });
     });
+
+    describe("Energy usage", function(){
+        describe("Low usage", function(){
+            it("Less than 18 is low usage", function(){
+                let thermostat = new Thermostat
+                thermostat.down(5)
+                expect(thermostat.energyUsage()).toBe('low-usage')
+            });
+        });
+
+        describe("Medium usage", function(){
+            it("Less than or equal to 25 is medium usage", function(){
+                let thermostat = new Thermostat
+                thermostat.up(4)
+                expect(thermostat.energyUsage()).toBe('medium-usage')
+            });
+        });
+
+        describe("High usage", function(){
+            it("Anything else is high usage", function(){
+                let thermostat = new Thermostat
+                thermostat.up(10)
+                expect(thermostat.energyUsage()).toBe('high-usage')
+            });
+        });
+    });
 });
