@@ -52,4 +52,27 @@ describe("Thermostat", function(){
             });
         });    
     });
+
+    describe("Maximum temperature", function(){
+        describe("PSM On", function(){
+            it("Maximum temperature should be 25", function(){
+                let thermostat = new Thermostat
+                for(let i = 0; i < 5; i++){
+                   thermostat.up(1);
+                };
+                expect(thermostat.temperature).toBe(25)
+            });
+        });
+        describe("PSM Off", function(){
+            it("Maximum temperature should be 32", function(){
+                let thermostat = new Thermostat
+                thermostat.powerSavingModeOff();
+                for(let i = 0; i < 12; i++){
+                   thermostat.up(1);
+                };
+                expect(thermostat.temperature).toBe(32)
+            });
+        });
+
+    });
 });

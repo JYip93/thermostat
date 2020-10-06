@@ -9,6 +9,9 @@ class Thermostat{
     }
 
     up(num){
+         if (this.isMaximumTemp()){
+            return
+         } 
          this.temperature += num
     };
 
@@ -24,7 +27,10 @@ class Thermostat{
    };
 
    isMaximumTemp(){
-    return this.temperature === this.MINIMUM_TEMPERATURE
+       if (this.powerSavingMode === false){
+            return this.temperature === this.PSM_OFF_LIMIT;
+       }
+       return this.temperature === this.PSM_ON_LIMIT 
     };
 
     powerSavingModeOff(){
