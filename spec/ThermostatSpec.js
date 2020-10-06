@@ -75,4 +75,15 @@ describe("Thermostat", function(){
         });
 
     });
+
+    describe("Reset", function(){
+        describe("Reset the temperature", function(){
+            it("Temperature should be set back to 20", function(){
+                let thermostat = new Thermostat
+                thermostat.down(7)
+                thermostat.resetTemperature()
+                expect(thermostat.temperature).toBe(20)
+            });
+        });
+    });
 });

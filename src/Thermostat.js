@@ -3,8 +3,8 @@ class Thermostat{
         this.temperature = 20;
         this.MINIMUM_TEMPERATURE = 10;
         this.powerSavingMode = true;
-        this.PSM_ON_LIMIT = 25;
-        this.PSM_OFF_LIMIT = 32;
+        this.PSM_ON_MAX_TEMP = 25;
+        this.PSM_OFF_MAX_TEMP = 32;
 
     }
 
@@ -28,9 +28,10 @@ class Thermostat{
 
    isMaximumTemp(){
        if (this.powerSavingMode === false){
-            return this.temperature === this.PSM_OFF_LIMIT;
+            return this.temperature === this.PSM_OFF_MAX_TEMP;
+       }    else {
+            return this.temperature === this.PSM_ON_MAX_TEMP; 
        }
-       return this.temperature === this.PSM_ON_LIMIT 
     };
 
     powerSavingModeOff(){
@@ -41,5 +42,8 @@ class Thermostat{
         this.powerSavingMode = true
     };
 
+    resetTemperature(){
+        this.temperature = 20
+    };
 
 };
