@@ -6,16 +6,25 @@
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
-        <h1>Thermostat</h1>
+        <link rel="stylesheet" href="styles.css">
+       
     </head>
     <body>
+    <script src="jquery.js"></script>
+    <script src="interface.js"></script>
+    <h1>Thermostat temperature is <span id="temperature"></span></h1>
+    <h2>Current temperature is: <span id="current-temp"></span> degrees celsius</h2>
+    <select id="current-city">
+        <option value="london">London</option>
+        <option value="hongkong">Hong Kong</option>
+        <option value="paris">Paris</option>
+    </select>
         <button id="increase-temp">+</button>
         <button id="decrease-temp">-</button>
         <button id="reset-temp">Reset</button>
         <button id="psm-on">Turn On</button>
         <button id="psm-off">Turn Off</button>
-        <button id="energy-usage">Check energy usage</button>
+        Power saving mode is <span id="power-saving-status">On</span>
 
 
       

@@ -5,8 +5,11 @@ class Thermostat{
         this.powerSavingMode = true;
         this.PSM_ON_MAX_TEMP = 25;
         this.PSM_OFF_MAX_TEMP = 32;
-
     }
+
+    current_temp(){
+        return this.temperature
+    };
 
     up(num){
          if (this.isMaximumTemp()){
